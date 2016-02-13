@@ -70,7 +70,7 @@ public class App
 		endTimes.add(System.currentTimeMillis());*/
 		
 		startTimes.add(System.currentTimeMillis());
-		Sort.mergeSortOptimized(myArrayCopy1, 0, NUM_ELEM-1, 40);
+		Sort.mergeSortOptimized(myArrayCopy1, 0, NUM_ELEM-1,  40);
 		endTimes.add(System.currentTimeMillis());
 		
 		startTimes.add(System.currentTimeMillis());

@@ -32,32 +32,32 @@ public class App
 		Utility.populateArray(sortArrayMerge);
 		List<Integer> sortArrayMergeParallel = Utility.copyArray(sortArrayMerge);
 		List<Integer> sortArrayMergeParallelWO = Utility.copyArray(sortArrayMerge);
-		List<Integer> sortArrayMergeWO = Utility.copyArray(sortArrayMerge);
+		List<Integer> sortArrayMergeParallelOptimized = Utility.copyArray(sortArrayMerge);
 		// Utility.printArray(sortArray);
 		// Utility.printArray(sortArrayCopy);
 
 		long startParallelMergeWO = System.currentTimeMillis();
-		MultithreadedSort.runParallelMergeWOSentinel(sortArrayMergeParallelWO, cores);
+		MultithreadedSort.runParallelMerge(sortArrayMergeParallelWO, cores, MultithreadedSort.MERGE_SORT_WO_SENTINEL );
 		long endParrallelMergeWO = System.currentTimeMillis();
 		
 		long startParallelMerge = System.currentTimeMillis();
-		MultithreadedSort.runParallelMerge(sortArrayMergeParallel, cores);
+		//MultithreadedSort.runParallelMerge(sortArrayMergeParallel, cores, MultithreadedSort.MERGE_SORT);
 		long endParrallelMerge = System.currentTimeMillis();
 		
+		long startParallelMergeOptimized = System.currentTimeMillis();
+		//MultithreadedSort.runParallelMerge(sortArrayMergeParallelOptimized, cores, MultithreadedSort.MERGE_SORT_OPTIMIZED);
+		long endParallelMergeOptimized = System.currentTimeMillis();
 
 		
-		long startMergeWO = System.currentTimeMillis();
-		Sort.mergeSortWOSentinel(sortArrayMergeWO, 0, sortArrayMerge.size() - 1);
-		long endMergeWO = System.currentTimeMillis();
 		
 		long startMerge = System.currentTimeMillis();
-		Sort.mergeSort(sortArrayMerge, 0, sortArrayMerge.size() - 1);
+		//Sort.mergeSort(sortArrayMerge, 0, sortArrayMerge.size() - 1);
 		long endMerge = System.currentTimeMillis();
 
 		// The search without sentinels seems to perform slightly faster with
 		// the ratio of times
 		// approaching to 1 as the size of array grows
-		System.out.println("Merge time WO is: " + (endMergeWO - startMergeWO)
+		System.out.println("Merge time paralle optimized is: " + (endParallelMergeOptimized - startParallelMergeOptimized)
 				+ "\nMerge time is: " + (endMerge - startMerge)
 				+ "\nParralel merge time WO is: " + (endParrallelMergeWO - startParallelMergeWO)
 				+ "\nParralel merge time is: " + (endParrallelMerge - startParallelMerge));
