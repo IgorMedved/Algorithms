@@ -3,7 +3,7 @@ package exercize232_merge_merge_wo_sentinel_multithreading;
 import java.util.ArrayList;
 import java.util.List;
 
-import utility.MultithreadedSearch;
+import utility.MultithreadedSort;
 import utility.Sort;
 import utility.Utility;
 
@@ -37,11 +37,11 @@ public class App
 		// Utility.printArray(sortArrayCopy);
 
 		long startParallelMergeWO = System.currentTimeMillis();
-		MultithreadedSearch.runParallelMergeWOSentinel(sortArrayMergeParallelWO, cores);
+		MultithreadedSort.runParallelMergeWOSentinel(sortArrayMergeParallelWO, cores);
 		long endParrallelMergeWO = System.currentTimeMillis();
 		
 		long startParallelMerge = System.currentTimeMillis();
-		MultithreadedSearch.runParallelMerge(sortArrayMergeParallel, cores);
+		MultithreadedSort.runParallelMerge(sortArrayMergeParallel, cores);
 		long endParrallelMerge = System.currentTimeMillis();
 		
 

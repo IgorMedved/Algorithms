@@ -76,6 +76,40 @@ public class Sort
 			merge(sortArray, p, q, r);
 		}
 	}
+	
+	public static void mergeSortOptimized(List<Integer> sortArray, int p, int r, int minDivisionSize)
+	{
+
+		if (p+minDivisionSize < r)
+		{
+			int q = (p + r) / 2;
+			mergeSortOptimized(sortArray, p, q, minDivisionSize);
+			mergeSortOptimized(sortArray, q + 1, r, minDivisionSize);
+			merge(sortArray, p, q, r);
+		}
+		else
+		{
+			if (minDivisionSize != 0)
+			insertSortNondescending (sortArray, p, r);
+		}
+	}
+	
+	private static void insertSortNondescending(List<Integer> sortArray, int p, int r)
+	{
+		for (int i = p+1; i <= r; i++)
+		{
+			int key = sortArray.get(i);
+
+			int j = i - 1;
+
+			while (j >= p && key < sortArray.get(j))
+			{
+				sortArray.set(j + 1, sortArray.get(j));
+				j--;
+			}
+			sortArray.set(j + 1, key);
+		}
+	}
 
 	public static void mergeSortWOSentinel(List<Integer> sortArray, int p, int r)
 	{

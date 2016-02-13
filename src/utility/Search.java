@@ -61,7 +61,7 @@ public class Search
 		 }
 		 
 		 int middle = (lower+upper)/2;
-		 System.out.println("Lower " + lower +" upper "+ upper + " middle "+middle);
+		 
 		 if(searchArray.get(middle) == value)
 			 return middle+1;
 		 else if (value < searchArray.get(middle))

@@ -5,6 +5,7 @@ import java.util.List;
 import java.util.Random;
 import java.util.Scanner;
 
+import utility.Extra;
 import utility.Sort;
 import utility.Utility;
 
@@ -22,50 +23,32 @@ public class App
 		Random random = new Random();
 		
 		List <Integer> myList = new ArrayList<>();
-		Utility.populateArray(myList, 20);
-		Sort.mergeSort(myList, 0, 19);
+		//System.out.println(Integer.MAX_VALUE);
+		Utility.populateArray(myList, 1000000);
+		Sort.mergeSort(myList, 0, 999999);
 		
 		do
 		{
 			System.out.println("Press any key to continue to generate new value, type exit to exit ");
-			int value = random.nextInt(80);
+			int value = random.nextInt(2000000000);
 			
-			Utility.printArray(myList);
+			//Utility.printArray(myList);
 			
 			System.out.print("The value " + value + " is " );
-			if (!sumInList (myList, value, 0, myList.size()-1))
+			Long startTime = System.currentTimeMillis();
+			if (!Extra.sumInList (myList, value, 0, myList.size()-1))
 			{
 				System.out.print("not ");
 			}
 			System.out.println("in the list");
+			
+			
+			
+			Long endTime = System.currentTimeMillis();
+			System.out.println("The time it took is " + (endTime-startTime));
 		}
 		while (!sc.nextLine().equalsIgnoreCase("exit"));
 	}
 	
-	public static boolean sumInList (List<Integer> myList, int value, int lower, int upper)
-	{
-		int middle = (lower+upper)/2;
-		
-		while(lower < upper )
-		{
-			int sum = myList.get(middle) + myList.get(middle+1);
-			System.out.println(sum);
-			
-			if (value == sum )
-				return true;
-			else if (value > sum)
-				lower = middle +1;
-			else
-				upper = middle;
-			
-			middle = (lower + upper)/2;
-			
-		
-		}
-		
-		
-		return false;
-				
-	}
-
+	
 }
