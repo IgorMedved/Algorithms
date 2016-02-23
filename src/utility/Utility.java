@@ -7,13 +7,21 @@ import java.util.Random;
 public class Utility
 {
 
-	public static void printArray(List<?> sortArray)
+	public static void printArray (List<?> sortArray, int lowerBound, int upperBound)
 	{
-		for (int i = 0; i < sortArray.size(); i++)
+		lowerBound = lowerBound<0? 0: lowerBound;
+		upperBound = upperBound>=sortArray.size()? sortArray.size()-1: upperBound;
+		
+		for (int i = lowerBound; i <=upperBound; i++)
 		{
 			System.out.print(sortArray.get(i) + " ");
 		}
 		System.out.println();
+	}
+	
+	public static void printArray(List<?> sortArray)
+	{
+		printArray(sortArray, 0, sortArray.size());
 	}
 
 	public static void reverse(List<Short> c)
