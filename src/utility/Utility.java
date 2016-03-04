@@ -86,5 +86,59 @@ public class Utility
 			Utility.printArray(myArrays.get(i));
 		}
 	}
+	
+	 public static List<List<Integer>> substractMatrices (List<List<Integer>> a, List<List<Integer>> b)
+	    {
+	      List<List<Integer>> result = new ArrayList<>(a.size());
+	      List<Integer> rowResult;
+	      
+	      
+	      for (int i = 0; i< a.size(); i++)
+	      {
+	        rowResult = new ArrayList<>(a.get(i).size());
+	          for (int j = 0; j< a.get(0).size(); j++)
+	          {
+	          rowResult.add(a.get(i).get(j) - b.get(i).get(j));
+	        }
+	        result.add(rowResult);
+	      }
+	      
+	      return result;
+	    }
+	  
+	  public static List<List<Integer>> addMatrices (List<List<Integer>> a, List<List<Integer>> b)
+	    {
+	      List<List<Integer>> result = new ArrayList<>(a.size());
+	      List<Integer> rowResult;
+	      
+	      
+	      for (int i = 0; i< a.size(); i++)
+	      {
+	        rowResult = new ArrayList<>(a.get(i).size());
+	          for (int j = 0; j< a.get(0).size(); j++)
+	          {
+	          rowResult.add(a.get(i).get(j) + b.get(i).get(j));
+	        }
+	        result.add(rowResult);
+	      }
+	      
+	      return result;
+	    }
+	  
+	  public static void populateSqrMatrix (List<List<Integer>> matrix, int size)
+	    {
+	      populateMatrix (matrix, size, size);
+	    }
+	  
+	      public static void populateMatrix (List<List<Integer>> matrix, int numRows, int numCols)
+	    {
+	      List<Integer> row;
+	      for (int i = 0; i < numRows; i++)
+	      {
+	        row = new ArrayList<>();
+	        populateArray(row, numCols);
+	        matrix.add(row);
+	      }
+	    }
 
 }
