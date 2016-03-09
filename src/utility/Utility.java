@@ -140,5 +140,15 @@ public class Utility
 	        matrix.add(row);
 	      }
 	    }
+	      
+	      public static void printMatrix(List<List<Integer>> myArrays)
+	      {
+	        System.out.println("Matrix is: ");
+	        for (int i = 0; i < myArrays.size(); i++)
+	          {
+	              
+	              Utility.printArray(myArrays.get(i));
+	          }
+	      }
 
 }
