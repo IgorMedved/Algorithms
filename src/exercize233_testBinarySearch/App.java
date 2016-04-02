@@ -4,9 +4,9 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Scanner;
 
-import utility.Search;
-import utility.Sort;
 import utility.Utility;
+import utility.search.Search;
+import utility.sort.Sort;
 
 public class App
 {

@@ -1,7 +1,7 @@
 package exercize655_stacks_priorityqueue;
 
-import utility.Queue;
-import utility.Stack;
+import utility.data_structures.Queue;
+import utility.data_structures.Stack;
 
 
 

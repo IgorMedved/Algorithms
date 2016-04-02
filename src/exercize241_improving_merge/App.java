@@ -3,8 +3,8 @@ package exercize241_improving_merge;
 import java.util.ArrayList;
 import java.util.List;
 
-import utility.Sort;
 import utility.Utility;
+import utility.sort.Sort;
 
 public class App
 {

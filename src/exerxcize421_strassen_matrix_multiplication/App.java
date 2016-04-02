@@ -3,9 +3,9 @@ package exerxcize421_strassen_matrix_multiplication;
 import java.util.ArrayList;
 import java.util.List;
 
-import utility.MatrixMultiplication;
-import utility.MatrixMultiplicationStrassen;
 import utility.Utility;
+import utility.extra.MatrixMultiplication;
+import utility.extra.MatrixMultiplicationStrassen;
 
 /* Strassen algorithm for multiplying matrices in time O (n^ln7) = O (n^2.81)
  * Divide matrices A into a11 a12

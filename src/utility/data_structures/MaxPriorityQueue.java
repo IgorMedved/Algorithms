@@ -1,6 +1,9 @@
-package utility;
+package utility.data_structures;
 
 import java.util.List;
+
+import utility.Utility;
+import utility.sort.HeapSort;
 
 public class MaxPriorityQueue
 {

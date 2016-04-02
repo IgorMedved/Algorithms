@@ -5,9 +5,9 @@ import java.util.List;
 import java.util.Random;
 import java.util.Scanner;
 
-import utility.Extra;
-import utility.Sort;
 import utility.Utility;
+import utility.extra.Extra;
+import utility.sort.Sort;
 
 public class App
 {

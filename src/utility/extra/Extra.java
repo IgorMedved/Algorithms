@@ -1,6 +1,8 @@
-package utility;
+package utility.extra;
 
 import java.util.List;
+
+import utility.search.Search;
 
 
 // this class contains some interesting algorithms

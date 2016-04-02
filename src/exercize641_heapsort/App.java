@@ -3,8 +3,8 @@ package exercize641_heapsort;
 import java.util.ArrayList;
 import java.util.List;
 
-import utility.HeapSort;
 import utility.Utility;
+import utility.sort.HeapSort;
 
 public class App
 {

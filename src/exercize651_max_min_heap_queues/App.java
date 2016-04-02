@@ -4,9 +4,9 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Random;
 
-import utility.MaxPriorityQueue;
-import utility.MinPriorityQueue;
 import utility.Utility;
+import utility.data_structures.MaxPriorityQueue;
+import utility.data_structures.MinPriorityQueue;
 
 public class App
 {

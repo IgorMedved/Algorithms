@@ -1,4 +1,4 @@
-package utility;
+package utility.sort;
 
 import java.util.List;
 
@@ -20,24 +20,97 @@ public class HeapSort
 		}
 	}
 	
-	public static void maxHeapDelete( List<Integer> heap, int position)
+	// increase node value and adjust node position in maxHeap accordingly (the value at the node WILL NOT BE DECREASED with this method)
+	// !! this function should be used with max heap only!!!!!!
+	public static void heapIncreaseKey (List<Integer> maxHeap, int position, int value) 
 	{
-		if (position < heap.size())
+		if (!isValidPosition(maxHeap, position))
+			return;
+		
+		if (maxHeap.get(position) >= value)
+			return;
+		
+		int parent = parent(position);
+		
+		while (position > 0 && value > maxHeap.get(parent))
 		{
-			heap.set(position, heap.get(heap.size()-1));
-			heap.remove(heap.size()-1);
-			maxHeapify_(heap, position);
+			maxHeap.set(position, maxHeap.get(parent));
+			position = parent;
+			parent = parent(position);
 		}
+		
+		maxHeap.set(position, value);
+		
+		
+		
 	}
 	
+	
+	// !! this function should be used with min heap only!!!!!!
+	// Decrease node value and adjust node position in minHeap accordingly (the value at the node WILL NOT be increased with this method)
+		
+	public static void heapDecreaseKey(List<Integer> minHeap, int position, int value)
+	{
+		if (!isValidPosition(minHeap, position))
+		{
+			return;
+		}
+		
+		if (minHeap.get(position) <= value)
+			return;
+		
+		int parent = parent(position);
+		
+		while (position > 0 && value < minHeap.get(parent))
+		{
+			minHeap.set(position, minHeap.get(parent));
+			position = parent;
+			parent = parent(position);
+		}
+		
+		minHeap.set(position, value);
+		
+	}
+	
+	// delete an element from heap at given position
+	public static void maxHeapDelete( List<Integer> heap, int position)
+    {
+        // check that given position is valid
+		if (!isValidPosition(heap, position))
+          return;
+		
+		
+        // reduce the size of the heap by 1 and save the value of the last element
+        int value  = heap.get(heap.size()-1);
+        heap.remove(heap.size()-1);
+        
+        // insert the saved value of last element back into heap at the position of the element being deleted
+        if (heap.get(position) > value) // maxHeapify if the value of element being deleted > last element value
+        {
+        	heap.set(position, value);
+        	maxHeapify (heap, position);
+        }
+        else // increase key 
+          heapIncreaseKey (heap, position, value); 
+          
+         
+    }
 	public static void minHeapDelete( List<Integer> heap, int position)
 	{
-		if (position < heap.size())
+		if (!isValidPosition(heap, position))
+		 return;
+		
+		int value  = heap.get(heap.size()-1);
+        heap.remove(heap.size()-1);
+        
+        
+		if (heap.get(position) < value)
 		{
-			heap.set(position, heap.get(heap.size()-1));
-			heap.remove(heap.size()-1);
+			heap.set(position, value);
 			minHeapify_(heap,position); 
 		}
+		else // decrease key
+			heapDecreaseKey(heap, position, value);
 	}
 	
 	public static int left (int position)
@@ -179,5 +252,10 @@ public class HeapSort
 			swap (array, 0, i);
 			minHeapify_ (array, 0, i);
 		}
+	}
+	
+	private static boolean isValidPosition(List<Integer> heapArray, int position)
+	{
+		return position < heapArray.size() && position >= 0;
 	}
 }

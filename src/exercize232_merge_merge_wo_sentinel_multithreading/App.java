@@ -3,9 +3,9 @@ package exercize232_merge_merge_wo_sentinel_multithreading;
 import java.util.ArrayList;
 import java.util.List;
 
-import utility.MultithreadedSort;
-import utility.Sort;
 import utility.Utility;
+import utility.sort.MultithreadedSort;
+import utility.sort.Sort;
 
 public class App
 {

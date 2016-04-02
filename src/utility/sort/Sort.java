@@ -1,7 +1,9 @@
-package utility;
+package utility.sort;
 
 import java.util.ArrayList;
 import java.util.List;
+
+import utility.search.Search;
 
 // This class contains different sorting algorithms
 /*

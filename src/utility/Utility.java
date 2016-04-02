@@ -59,7 +59,7 @@ public class Utility
 
 		for (int i = 0; i < size; i++)
 		{
-			sortArray.add(random.nextInt(size *100));
+			sortArray.add(random.nextInt(size ));
 		}
 	}
 
