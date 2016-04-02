@@ -3,8 +3,8 @@ package exercize711_quicksort;
 import java.util.ArrayList;
 import java.util.List;
 
-import utility.QuickSort;
 import utility.Utility;
+import utility.sort.QuickSort;
 import utility.StatisticsUtility;
 
 public class QuickSortTest

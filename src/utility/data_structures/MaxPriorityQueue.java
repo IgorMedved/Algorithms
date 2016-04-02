@@ -44,17 +44,17 @@ public class MaxPriorityQueue
 	{
 		if (position < mHeapQueue.size() && key > mHeapQueue.get(position))
 		{
-			mHeapQueue.set(position, key);
+			//mHeapQueue.set(position, key);
 			
 			int p = HeapSort.parent(position);
 			while (position>0 && key> mHeapQueue.get(p))
 			{
-				//HeapSort.swap(mHeapQueue, position, p); // dont really need to swap values just 1 assignment is enough
+				//HeapSort.swap(mHeapQueue, position, p); // dont need to swap values just 1 assignment is enough
 				mHeapQueue.set(position, mHeapQueue.get(p));
 				position = p;
 				p = HeapSort.parent(position);
 			}
-			mHeapQueue.set(position, key); // final assignment that updates the position (not needed if the loop has swap
+			mHeapQueue.set(position, key); // final assignment that updates the position 
 		}
 	}
 	
