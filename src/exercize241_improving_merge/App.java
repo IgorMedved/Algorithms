@@ -16,12 +16,12 @@ public class App
 		final int NUM_ELEM =  7000000;
 		final int LEAFSIZE = 1;
 		
-		List myArray = new ArrayList<>();
+		List<Integer> myArray = new ArrayList<>();
 		Utility.populateArray(myArray, NUM_ELEM);
 		
-		List myArrayCopy1 = (Utility.copyArray(myArray));
+		List<Integer> myArrayCopy1 = (Utility.copyArray(myArray));
 
-		List myArrayCopy2 = (Utility.copyArray(myArray));
+		List<Integer> myArrayCopy2 = (Utility.copyArray(myArray));
 		/*for (int i = 0; i < NUM_ARRAYS; i++)
 		{
 			

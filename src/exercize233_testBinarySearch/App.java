@@ -48,6 +48,8 @@ public class App
 			
 
 		} while (!exitString.equalsIgnoreCase("exit"));
+		
+		sc.close();
 	}
 
 }

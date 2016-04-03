@@ -48,6 +48,8 @@ public class App
 			System.out.println("The time it took is " + (endTime-startTime));
 		}
 		while (!sc.nextLine().equalsIgnoreCase("exit"));
+		
+		sc.close();
 	}
 	
 	
