@@ -37,9 +37,8 @@ public class Utility
 
 	public static List<Integer> copyArray(List<Integer> original)
 	{
-		List<Integer> copy = new ArrayList<>(original.size());
-		for (int i = 0; i < original.size(); i++)
-			copy.add(original.get(i));
+		List<Integer> copy = new ArrayList<>(original);
+		
 
 		return copy;
 
@@ -47,19 +46,20 @@ public class Utility
 
 	public static void populateArray(List<Integer> sortArray)
 	{
-		Random random = new Random();
-
-		for (int i = 0; i < 10000000; i++)
-			sortArray.add(random.nextInt(100000));
+		populateArray(sortArray, (int)10e7, (int)10e5 );
 	}
 
 	public static void populateArray(List<Integer> sortArray, int size)
 	{
+		populateArray(sortArray, size, size*10);
+	}
+	
+	public static void populateArray(List<Integer> sortArray, int size, int seed)
+	{
 		Random random = new Random();
-
-		for (int i = 0; i < size; i++)
+		for (int i = 0; i < size; i ++)
 		{
-			sortArray.add(random.nextInt(size ));
+			sortArray.add(random.nextInt(seed));
 		}
 	}
 
@@ -150,5 +150,49 @@ public class Utility
 	              Utility.printArray(myArrays.get(i));
 	          }
 	      }
+	      
+	      public static void printHeap(List<Integer> heap)
+	      {
+	    	  int level = getHeapLevel(heap);
+	    	  int currentLevel=1;
+    	      int numElements = 0;
+	    	  
+	    	  for (int j = 0; j < heap.size(); j++)
+	    	  {
+	    	      if (j == numElements)
+	    	      {
+	    	    	  System.out.println("\n\n");
+	    	    	  for (int i = 0; i < (int)Math.pow(2, level - currentLevel-1); i ++)
+		    		  {
+		    			  System.out.print("\t");
+		    		  }
+	    	    	  
+	    	    	  currentLevel ++;
+	    	    	  numElements = numElements *2 +1;
+	    	    	  
+	    	      }
+	    	      
+	    	      System.out.print(heap.get(j));
+	    	      for (int i = 0; i < (int)Math.pow(2, level-currentLevel +1); i++)
+	    	    	  System.out.print("\t");
+	    	  }
+	    	  System.out.println();
+	    		  
+	      }
+	      
+	      public static int getHeapLevel(List<Integer> heap)
+	      {
+	    	  int level = 0;
+	    	  for (int size = heap.size(); size > 0; size/=2)
+	    	  {
+	    		  level ++;
+	    	  }
+	    	  return level;
+	      }
 
+		public static void populateOrderedArray(List<Integer> array, int size) {
+			for (int i = 0; i < size; i++)
+				array.add(i+1);
+			
+		}
 }

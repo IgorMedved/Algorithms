@@ -96,7 +96,7 @@ public class Sort
 		}
 	}
 	
-	private static void insertSortNondescending(List<Integer> sortArray, int p, int r)
+	public static void insertSortNondescending(List<Integer> sortArray, int p, int r)
 	{
 		for (int i = p+1; i <= r; i++)
 		{
@@ -125,7 +125,7 @@ public class Sort
 		}
 	}
 
-	public static void merge(List<Integer> sortArray, int p, int q, int r)
+	static void merge(List<Integer> sortArray, int p, int q, int r)
 	{
 		int n1 = q - p + 1;
 		int n2 = r - q;
@@ -157,7 +157,7 @@ public class Sort
 
 	}
 
-	public static void mergeWithoutSentinel(List<Integer> sortArray, int p,
+	static void mergeWithoutSentinel(List<Integer> sortArray, int p,
 			int q, int r)
 	{
 		int n1 = q - p + 1;
@@ -203,7 +203,7 @@ public class Sort
 	elements of A. Write pseudocode for this algorithm, which is known as selection
 	sort. What loop invariant does this algorithm maintain? Why does it need to run
 	for only the first n 1 elements, rather than for all n elements? Give the best-case
-	and worst-case running times of selection sort in ‚-notation.
+	and worst-case running times of selection sort in ï¿½-notation.
 	*/
 	public static void selectionSort (List<Integer> sortArray)
     {
