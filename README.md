@@ -97,3 +97,36 @@ Chapter 8 - sorting in Linear times
 8-2 Radix sort
 
 8-3 Bucket sort
+
+
+Chapter 9 - Median and Order Statistics
+
+
+9-1 Minimum and Maximum (exercise find 2nd largest element in unsorted array in O(N) time)
+
+9-2 Selection in Expected linear time (exercise find kth largest element in unsorted array in O(N) time)
+
+9-3 Selection in Worst case linear time (exercise find p elements around kth largest element in O(N) time)
+
+
+Chapter 10 - Elementary Data Structures
+
+
+10-1 Stacks and Queues
+
+10-2 Linked Lists
+
+10-4 Trees (Breadth and depth first traversals, reducing memory use and recursion during traversal)
+
+
+
+Chapter 11 - Hash Tables
+
+
+11-2 Hash Tables
+
+
+Chapter 12 - Binary Search Trees
+
+
+12-2 Quering Binary Search Trees
