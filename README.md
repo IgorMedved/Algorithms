@@ -1,5 +1,5 @@
 # Algorithms
-A collection of algorithms based on exercizes from a book Introduction to Algorithms
+A collection of algorithms based on exercises from a book Introduction to Algorithms
 http://www.amazon.com/Introduction-Algorithms-3rd-Edition-Press/dp/0262033844
 
 Progress so far:
